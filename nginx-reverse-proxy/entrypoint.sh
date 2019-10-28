@@ -13,7 +13,7 @@ do
     port=`echo ${proxy_data} | awk -F\| '{print $1}'`
     host=`echo ${proxy_data} | awk -F\| '{print $2}'`
 
-    cat server.template.conf | sed s/PORT/${port}/g | sed s~HOST~"${host}"~g >> /etc/nginx/nginx.conf
+    cat /server.template.conf | sed s/PORT/${port}/g | sed s~HOST~"${host}"~g >> /etc/nginx/nginx.conf
     counter=`expr $counter + 1`
 done
 
